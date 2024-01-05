@@ -6,6 +6,9 @@
 app = "example-opentelemetry-collector-http-check"
 primary_region = "syd"
 
+[env]
+OTEL_SERVICE_NAME = "opentelemetry-collector-http-check"
+
 [build]
 
 
@@ -22,7 +25,7 @@ port = 8888
 path = "/metrics"
 
 [checks]
-[checks.name_of_your_http_check]
+[checks.opentelemetry_collector_http]
 grace_period = "10s"
 interval = "10s"
 method = "get"
