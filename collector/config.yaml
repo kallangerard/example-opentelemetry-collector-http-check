@@ -10,9 +10,15 @@ processors:
 
 exporters:
   debug:
+    verbosity: detailed
+
+extensions:
+  health_check:
+    path: "/health/status"
 
 service:
-  extensions: []
+  extensions:
+    - health_check
   pipelines:
     metrics:
       receivers:
@@ -21,3 +27,7 @@ service:
         - batch
       exporters:
         - debug
+
+  telemetry:
+    metrics:
+      address: ":8888"
