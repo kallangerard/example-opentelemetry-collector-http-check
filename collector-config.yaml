@@ -1,0 +1,21 @@
+receivers:
+  httpcheck:
+    targets: ${file:http-targets.yaml}
+    collection_interval: 10s
+
+processors:
+  batch:
+
+exporters:
+  debug:
+
+service:
+  extensions: []
+  pipelines:
+    metrics:
+      receivers:
+        - httpcheck
+      processors: 
+        - batch
+      exporters: 
+        - debug
