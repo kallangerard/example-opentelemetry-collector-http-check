@@ -10,7 +10,12 @@ processors:
 
 exporters:
   debug:
-    verbosity: detailed
+    # verbosity: detailed
+
+  prometheus:
+    endpoint: ":9091"
+    resource_to_telemetry_conversion:
+      enabled: true
 
 extensions:
   health_check:
@@ -27,6 +32,7 @@ service:
         - batch
       exporters:
         - debug
+        - prometheus
 
   telemetry:
     metrics:
