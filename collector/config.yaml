@@ -3,6 +3,7 @@ receivers:
     targets:
       - endpoint: https://kallan.dev:443
         method: GET
+    collection_interval: 60s
 
   prometheus:
     config:
@@ -16,13 +17,8 @@ processors:
   batch:
 
 exporters:
-  debug:
-    # verbosity: detailed
-
   prometheus:
     endpoint: ":9091"
-    resource_to_telemetry_conversion:
-      enabled: true
 
 extensions:
   health_check:

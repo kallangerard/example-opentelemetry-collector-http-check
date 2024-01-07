@@ -1,8 +1,3 @@
-# fly.toml app configuration file generated for example-opentelemetry-collector-http-check on 2024-01-05T21:14:23+08:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
 app = "example-opentelemetry-collector-http-check"
 primary_region = "syd"
 
