@@ -6,14 +6,14 @@
 app = "example-opentelemetry-collector-http-check"
 primary_region = "syd"
 
-[env]
-OTEL_SERVICE_NAME = "opentelemetry-collector-http-check"
-
 [build]
-
 
 [deploy]
 strategy = "immediate"
+
+[env]
+GOMEMLIMIT = "207MiB" # 256MB in MiB (256 * 1024 * 1024) * 0.8
+GOMAXPROCS = "1"
 
 [[vm]]
 cpu_kind = "shared"
